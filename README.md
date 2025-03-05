@@ -23,7 +23,7 @@ O projeto implementa várias funcionalidades para o joystick:
 1. 🕹️ [**Direção (`direcao.c`)**](src/direcao.c) - Funções para ler a direção baseada nas coordenadas x e y do joystick.
 2. 📏 [**Botão Joystick (`botao_joystick.c`)**](src/botao_joystick.c) - Leitura e debouncing dos botões do joystick.
 3. 📊 [**Porcentagem (`porcentagem.c`)**](src/porcentagem.c) - Cálculo da porcentagem de deslocamento nos eixos.
-4. 🧠 [**Principal (`main.c`)**](src/main.c) - Integração dos módulos e controle principal do joystick.
+4. 🧠 [**Principal (`joystick.c`)**](src/joystick.c) - Integração dos módulos e controle principal do joystick.
 
 ---
 
