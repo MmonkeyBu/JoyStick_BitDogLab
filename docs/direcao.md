@@ -13,24 +13,7 @@ O código realiza as seguintes funções:
 
 ## 2. Funções e Explicação Detalhada
 
-### 2.1. Função `Joy_Init`
-
-Esta função inicializa o joystick configurando o ADC (Analog to Digital Converter) e preparando os pinos de entrada.
-
-**Código:**
-```c
-void Joy_Init(void) {
-    adc_init();
-    adc_gpio_init(26);
-    adc_gpio_init(27); 
-
-    adc_select_input(0);
-    uint adc_y_raw = adc_read();
-    adc_select_input(1);
-    uint adc_x_raw = adc_read();
-}
-```
-2.2. Função Direction print_direction
+2.1. Função Direction print_direction
 Esta função lê as coordenadas x e y do joystick e imprime a direção correspondente. Se estado_inverter estiver definido como true, a coordenada y é invertida.
 
 Código:
@@ -77,7 +60,7 @@ Direction print_direction(int x, int y, bool estado_inverter) {
     }
 }
 ```
-2.3. Função atualizar_historico
+2.2. Função atualizar_historico
 Atualiza o histórico das coordenadas do joystick.
 
 Código:
@@ -89,7 +72,7 @@ void atualizar_historico(int x, int y) {
     index_hist = (index_hist + 1) % lISTA_TAM;
 }
 ```
-2.4. Função identificar_gesto
+2.3. Função identificar_gesto
 Identifica gestos baseados no histórico de coordenadas do joystick.
 
 Código:
@@ -118,7 +101,7 @@ Direction identificar_gesto() {
     return GESTO_NENHUM;
 }
 ```
-2.5. Função detectar_gesto
+2.4. Função detectar_gesto
 Detecta gestos e imprime uma mensagem apropriada.
 
 Código:
@@ -143,7 +126,7 @@ void detectar_gesto(int x, int y) {
     }
 }
 ```
-2.6. Função porcentagem
+2.5. Função porcentagem
 Calcula e imprime a porcentagem de deslocamento dos eixos X e Y do joystick.
 
 Código:
